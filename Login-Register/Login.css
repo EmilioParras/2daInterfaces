@@ -1,0 +1,17 @@
+*  {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(Images/background.png);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vh;
+    height: 50vh;
+    background-color: white;
+}
