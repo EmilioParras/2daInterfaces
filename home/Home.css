@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+    background-color:#2C2A2C;
+}
+
+/*----------Header Styles---------*/
+
+/*NavBar*/
+
+.header-navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* centra verticalmente */
+  background-color: #221C24;
+  padding: 5px 5px;
+}
+
+.header-navBar h1{
+    color: #26EE00;
+}
+
+.header-navBar button {
+  background-color: #221C24;
+  cursor: pointer;
+  border: 0;
+}
+
+.header-navBar button:hover img {
+  filter: brightness(1.5);
+  transform: scale(1.10);
+  transition: 0.2s ease;
+}
+
+
+/*SearchBar*/
+
+.header-searchBar {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.header-searchBar input {
+  background-color: #221C24;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+  border: 10px;
+  padding: 8px 12px;
+  color: #bbb;
+}
+
+.header-searchBar input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #26EE00;
+    color: #fff;
+}
+
+/*Elimina la X al escribir algo en la barra de busqueda.*/
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/*----------Main Styles---------*/
