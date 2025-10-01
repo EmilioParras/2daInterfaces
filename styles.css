@@ -1,0 +1,172 @@
+/* ==============================
+   RESET BÁSICO
+============================== */
+* {
+  box-sizing: border-box;
+}
+
+/* ==============================
+   FONDO DE PANTALLA
+============================== */
+body {
+  background-image: url("img/WhatsApp Image 2025-09-29 at 9.22.24 PM.jpeg");
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 15px;
+  overflow-y: auto; 
+
+}
+
+button, input,h1, h2, body, .switch, switch a, .switch a:hover, a{
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* ==============================
+   CONTENEDOR PRINCIPAL
+============================== */
+.container {
+  background-color: #2C2A2C;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 490px;
+  max-height: 750px;
+}
+
+/* ==============================
+   SUB-CONTENEDOR DE FORMULARIO
+============================== */
+
+/* ==============================
+   CONTENEDOR DE CONTRASEÑA CON OJO
+============================== */
+.password-container {
+  position: relative;
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  margin-bottom: 20px; /* Espacio debajo del input de contraseña */
+  width: 450px;
+  height: 45px;
+}
+
+/* Estilos para el input dentro del contenedor */
+.password-container input[type="password"],
+.password-container input[type="text"] { /* Esto es importante para cuandocambie a text */
+  width: 100%;
+  padding-right: 40px; /* Deja espacio para el icono */
+}
+
+/* Estilos para el icono del ojo */
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #9b5de5; /* Color del ojo */
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.password-toggle:hover {
+  color: #f15bb5; /* Color del ojo al pasar el ratón */
+}
+/* ==============================
+   TÍTULOS
+============================== */
+h1,
+h2 {
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 28px;
+ 
+}
+
+/* ==============================
+   INPUTS
+============================== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  width: 450px;
+  height: 45px;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 20px;
+  background: #2e2e3e;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+  margin-bottom: 10px;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus {
+  background: #3e3e55;
+  box-shadow: 0 0 8px rgba(155, 93, 229, 0.6);
+  width: 450px;
+  height: 45px;
+
+}
+
+/* ==============================
+   BOTONES
+============================== */
+button {
+  width: 460px;
+  height: 50px;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  background: #7a3bd4;
+  transform: translateY(-2px);
+}
+/* ==============================
+ SWITCH
+============================== */
+.switch {
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.switch a {
+  color: #9b5de5;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.switch a:hover {
+  color: #f15bb5;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 400px) {
+  .container {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}
