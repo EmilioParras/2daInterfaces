@@ -10,13 +10,13 @@
 ============================== */
 body {
   background-image: url("img/WhatsApp Image 2025-09-29 at 9.22.24 PM.jpeg");
-  min-height: 100vh;
+  min-height: 100vh;  /*altura de la ventana*/
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   padding: 15px;
-  overflow-y: auto; 
+  overflow-y: auto; /*scroll*/
 
 }
 
@@ -41,15 +41,11 @@ button, input,h1, h2, body, .switch, switch a, .switch a:hover, a{
 }
 
 /* ==============================
-   SUB-CONTENEDOR DE FORMULARIO
-============================== */
-
-/* ==============================
    CONTENEDOR DE CONTRASEÑA CON OJO
 ============================== */
 .password-container {
   position: relative;
-  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  width: 100%;
   margin-bottom: 10px; /* Espacio debajo del input de contraseña */
   width: 100%;
   height: 45px;
@@ -57,25 +53,25 @@ button, input,h1, h2, body, .switch, switch a, .switch a:hover, a{
 
 /* Estilos para el input dentro del contenedor */
 .password-container input[type="password"],
-.password-container input[type="text"] { /* Esto es importante para cuandocambie a text */
+.password-container input[type="text"] { 
   width: 100%;
   padding-right: 40px; /* Deja espacio para el icono */
 }
 
-/* Estilos para el icono del ojo */
+/*ojo */
 .password-toggle {
   position: absolute;
   right: 15px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  color: #9b5de5; /* Color del ojo */
+  color: #9b5de5;
   font-size: 18px;
   transition: color 0.3s;
 }
 
 .password-toggle:hover {
-  color: #f15bb5; /* Color del ojo al pasar el ratón */
+  color: #f15bb5; 
 }
 /* ==============================
    TÍTULOS
