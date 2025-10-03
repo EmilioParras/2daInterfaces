@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "JetBrains Mono";
+}
+
+body {
+    background-color:#2C2A2C;
+}
+
+/*----------Header Styles---------*/
+
+/*NavBar*/
+
+.header-navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #221C24;
+  padding: 5px 5px;
+}
+
+.header-navBar h1{
+    color: #26EE00;
+}
+
+.header-navBar button {
+  background-color: #221C24;
+  cursor: pointer;
+  border: 0;
+}
+
+.header-navBar button:hover img {
+  filter: brightness(1.5);
+  transform: scale(1.10);
+  transition: 0.2s ease;
+}
+
+
+/*----------Main Styles---------*/
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main p{
+  color: #666;
+}
+
+#main-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+/*Breadcrumb*/
+
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 1%;
+}
+
+.breadcrumb a{
+  color: #666;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb li+li:before {
+  content: "›"; /* Separador */
+  margin: 0 0.5rem;
+  color: #666;
+}
+
+
+/*GameMedia*/
+
+.game{
+  display: inline-flex;
+}
+
+.game-info{
+  width: 40%;
+}
+
+.media{
+  width: 60%;
+  padding-right: 1%;
+}
+
+.media img{
+  width: 100%;
+} 
+
+.media-list{
+  display: flex;            
+  overflow-x: auto;         
+  gap: 10px;               
+  padding: 10px;
+  white-space: nowrap; 
+}
+
+.media-list img{
+  width: 100px;
+  height: 5%;
+}
+
+
+/*GameInfo*/
+
+#description{
+  color: #fff;
+}
+.game-info p{
+  margin-bottom: 5% ;
+  font-size: 18px;
+}
+.game-info span{
+  color: #26EE00;
+}
+.game-info a{
+  font-weight: lighter;
+  margin-right: 1% ;
+  background-color: #5B1176;
+  color: #fff;
+  border-radius: 3px;
+  text-decoration: none;  
+}
+.game-info a:hover{
+  background-color: #2E003F;
+}
+.game-info button{
+  display: block;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #5B1176;
+  border-radius: 20px;
+  border: solid black 2px;
+  font-size: 50px;
+  padding: 5%;
+  color: #26EE00; 
+}
+.game-info button:hover{
+  background-color: #2E003F;
+}
+
+
+
+
+
+.show{
+    display: block;
+}
+.hidden{
+    display: none;
+}
+.game-execution{
+  width: 60%;
+}
+.running{
+  position: relative;
+  display: inline-block;
+}
+.running img{
+  width: 100%;
+}
+#game{  
+  width: 100%;
+}
+.icon-buttons{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  width: 10%;
+}
+.icon-buttons button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
