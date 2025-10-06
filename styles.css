@@ -161,8 +161,8 @@ button:hover {
 ============================== */
 @keyframes goldenGlow {
   0%, 50%, 100% {
-    box-shadow: 0 0 5px #ffd700;
-    background: linear-gradient(135deg, #ffd700, #ffae00);
+    box-shadow: 0 0 5px #26EE00;
+    background: linear-gradient(135deg, #26EE00, #26EE00);
     color: white;
   }
 }
