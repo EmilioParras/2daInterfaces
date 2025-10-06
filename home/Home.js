@@ -1,11 +1,15 @@
 const API_URL = "https://vj.interfaces.jima.com.ar/api/v2";
-const MAIN_CONTENT = document.getElementById("main-content");
-const LOADING = document.getElementById("loading");
+const MAIN_CONTENT = document.querySelector(".main-content");
+const LOADING = document.getElementById("loading-screen");
 
 function getGames(done) {
     fetch(API_URL)
         .then(response => response.json())
-        .then(games => done(games));
+        .then(games => done(games))
+        .catch(err => {
+            LOADING.textContent = "Error loading games.";
+            console.error(err);
+        });
 }
 
 function createCard(game) {
@@ -14,6 +18,7 @@ function createCard(game) {
 
     gameCard.innerHTML = `
         <img src="${game.background_image}" alt="${game.name}">
+        <p>${game.name}</p>
     `;
 
     return gameCard;
@@ -21,16 +26,14 @@ function createCard(game) {
 
 function createSection(genreName) {
     const section = document.createElement("section");
-    section.classList.add("games-section");
+    section.classList.add("genre-section");
 
     section.innerHTML = `
         <h2>${genreName}</h2>
         <div class="carousel-section">
-            <button class="btn-left">&#8249;</button>
-            <div class="games-section" id="carousel-${genreName.toLowerCase()}">
-
-            </div>
-            <button class="btn-right">&#8250;</button>
+            <button class="carousel-btn btn-left">&#8249;</button>
+            <div class="carousel" id="carousel-${genreName.toLowerCase().replace(/\s+/g, "-")}"></div>
+            <button class="carousel-btn btn-right">&#8250;</button>
         </div>
     `;
 
@@ -38,10 +41,10 @@ function createSection(genreName) {
 }
 
 getGames(games => {
-    LOADING.style.display = "none";
 
     const genresMap = {};
 
+    // --- Agrupa los juegos por genero. ---
     games.forEach(game => {
         game.genres.forEach(genre => {
             if (!genresMap[genre.name]) {
@@ -51,23 +54,24 @@ getGames(games => {
         });
     });
 
+    // --- Por cada genero crea una seccion. ---
     Object.keys(genresMap).forEach(genreName => {
         const section = createSection(genreName);
         MAIN_CONTENT.appendChild(section);
 
         const carousel = section.querySelector(".carousel");
-        const leftBtn = section.querySelector(".carousel-btn.left");
-        const rightBtn = section.querySelector(".carousel-btn.right");
+        const leftBtn = section.querySelector(".btn-left");
+        const rightBtn = section.querySelector(".btn-right");
 
-        // --- Limitar a 10 juegos por carrusel ---
-        const gamesToShow = genresMap[genreName].slice(0, 7);
+        const gamesToShow = genresMap[genreName].slice();
 
+        /*--- Crea las cards de cada juego y las agrega al carrusel que le corresponde. */
         gamesToShow.forEach(game => {
             carousel.appendChild(createCard(game));
         });
 
-        // --- Navegación del carrusel ---
-        const scrollAmount = 180; // ancho de card + gap
+        // Scroll
+        const scrollAmount = 360;
         leftBtn.addEventListener("click", () => {
             carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
         });
@@ -76,3 +80,41 @@ getGames(games => {
         });
     });
 });
+
+
+const hamburguerBtn = document.getElementById("hamburguer-button");
+const friendsBtn = document.getElementById("friends-button");
+const hamburguerSection = document.querySelector(".hamburguer-section");
+const friendsSection = document.querySelector(".friends-section");
+const mainContent = document.querySelector(".main-content-wrapper");
+
+function updateMainLayout() {
+  const leftVisible = !hamburguerSection.classList.contains("hamburguer-hidden");
+  const rightVisible = !friendsSection.classList.contains("friends-hidden");
+
+  // Reiniciamos clases
+  mainContent.classList.remove("expand-left", "expand-right", "expand-both");
+
+  // Aplicamos clases según qué paneles están visibles
+  if (!leftVisible && !rightVisible) {
+    mainContent.classList.add("expand-both");
+  } else if (!leftVisible && rightVisible) {
+    mainContent.classList.add("expand-left");
+  } else if (leftVisible && !rightVisible) {
+    mainContent.classList.add("expand-right");
+  }
+}
+
+hamburguerBtn.addEventListener("click", () => {
+  hamburguerSection.classList.toggle("hamburguer-hidden");
+  updateMainLayout();
+});
+
+friendsBtn.addEventListener("click", () => {
+  friendsSection.classList.toggle("friends-hidden");
+  updateMainLayout();
+});
+
+// Inicializamos el layout
+updateMainLayout();
+
