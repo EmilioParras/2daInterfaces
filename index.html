@@ -14,9 +14,9 @@
     <div class="container" id="loginForm">
         <h1>Welcome!!</h1>
         <div class="form-box">
-            <input type="email" placeholder="Email">
+            <input type="email" placeholder="Email *">
             <div class="password-container">
-                <input type="password" placeholder="Password" id="loginPassword">
+                <input type="password" placeholder="Password *" id="loginPassword">
                 <i class="fas fa-eye password-toggle" onclick="togglePasswordVisibility('loginPassword')"></i>
             </div>
             <button class="btn" onclick="handleLogin()">Login</button>
@@ -34,17 +34,17 @@
     <div class="container" id="registerForm" style="display: none;"> 
         <h1>Create Account</h1> 
         <div class="form-box">
-            <input type="text" placeholder="Name"> 
-            <input type="text" placeholder="Surname"> 
+            <input type="text" placeholder="Name *"> 
+            <input type="text" placeholder="Surname *"> 
             <input type="text" placeholder="Nickname (Optional)"> 
-            <input type="number" placeholder="Age"> 
-            <input type="email" placeholder="Email"> 
+            <input type="number" placeholder="Age *"> 
+            <input type="email" placeholder="Email *"> 
             <div class="password-container">
-                <input type="password" placeholder="Password" id="registerPassword">
+                <input type="password" placeholder="Password *" id="registerPassword">
                 <i class="fas fa-eye password-toggle" onclick="togglePasswordVisibility('registerPassword')"></i>
             </div>
             <div class="password-container">
-                <input type="password" placeholder="Repeat password" id="repeatPassword">
+                <input type="password" placeholder="Repeat password *" id="repeatPassword">
                 <i class="fas fa-eye password-toggle" onclick="togglePasswordVisibility('repeatPassword')"></i>
             </div>
             <button class="btn" id="registerBtn" onclick="validateForm()">Register</button>            <button class="btn" onclick="window.open('https://facebook.com', '_blank')">Register with Facebook</button>
