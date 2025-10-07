@@ -111,7 +111,18 @@ input[type="number"]:focus {
   background: #3e3e55;
   box-shadow: 0 0 8px rgba(155, 93, 229, 0.6);
   outline: none; /*conserva el mismo tamanio*/
+}
 
+
+/*desactiva el spinner de age*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 /* ==============================
