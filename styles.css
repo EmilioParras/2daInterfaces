@@ -160,17 +160,44 @@ button:hover {
    ANIMATION
 ============================== */
 @keyframes goldenGlow {
-  0%, 50%, 100% {
-    box-shadow: 0 0 5px #26EE00;
-    background: linear-gradient(135deg, #26EE00, #26EE00);
+  0%,
+  100% {
+    box-shadow: 0 0 15px #26ee00, 0 0 30px #26ee00, 0 0 45px #26ee00, 0 0 60px rgba(38, 238, 0, 0.4);
+    background: linear-gradient(135deg, #26ee00, #1ab800) !important;
     color: white;
+    transform: scale(1) rotate(0deg) translateY(0);
+  }
+
+  25% {
+    box-shadow: 0 0 25px #26ee00, 0 0 50px #26ee00, 0 0 75px #26ee00, 0 0 100px rgba(38, 238, 0, 0.6);
+    background: linear-gradient(135deg, #2fff00, #26ee00) !important;
+    color: white;
+    transform: scale(1.08) rotate(2deg) translateY(-5px);
+  }
+
+  50% {
+    box-shadow: 0 0 30px #26ee00, 0 0 60px #26ee00, 0 0 90px #26ee00, 0 0 120px rgba(38, 238, 0, 0.7);
+    background: linear-gradient(135deg, #3aff10, #26ee00) !important;
+    color: white;
+    transform: scale(1.1) rotate(0deg) translateY(-8px);
+  }
+
+  75% {
+    box-shadow: 0 0 25px #26ee00, 0 0 50px #26ee00, 0 0 75px #26ee00, 0 0 100px rgba(38, 238, 0, 0.6);
+    background: linear-gradient(135deg, #2fff00, #26ee00) !important;
+    color: white;
+    transform: scale(1.08) rotate(-2deg) translateY(-5px);
   }
 }
 
 .golden {
-  animation: goldenGlow 1s ease-in-out forwards;
+  animation: goldenGlow 2s ease-in-out infinite !important;
+  filter: brightness(1.1);
 }
-
+.golden:hover {
+  animation-duration: 2s !important;
+  filter: brightness(1.3);
+}
 
 
 /* ==============================

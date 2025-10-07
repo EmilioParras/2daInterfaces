@@ -26,8 +26,8 @@ function togglePasswordVisibility(id) {
 }
 function validateForm() {
   const inputs = document.querySelectorAll('#registerForm input');
-  const button = document.querySelector('#registerForm .btn');
-
+  const button = document.getElementById("registerBtn");
+  
   let allFilled = true;
 
   inputs.forEach(input => {
