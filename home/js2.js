@@ -65,13 +65,11 @@ getGames(games => {
 
         const gamesToShow = genresMap[genreName].slice();
 
-        /*--- Crea las cards de cada juego y las agrega al carrusel que le corresponde. */
         gamesToShow.forEach(game => {
             carousel.appendChild(createCard(game));
         });
 
-        // Scroll
-        const scrollAmount = 360;
+        const scrollAmount = 1300;
         leftBtn.addEventListener("click", () => {
             carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
         });
@@ -81,6 +79,8 @@ getGames(games => {
     });
 });
 
+
+/*==== Abrir y cerrar paneles laterales===== */
 
 const hamburguerBtn = document.getElementById("hamburguer-button");
 const friendsBtn = document.getElementById("friends-button");
@@ -92,15 +92,16 @@ function updateMainLayout() {
   const leftVisible = !hamburguerSection.classList.contains("hamburguer-hidden");
   const rightVisible = !friendsSection.classList.contains("friends-hidden");
 
-  // Reiniciamos clases
-  mainContent.classList.remove("expand-left", "expand-right", "expand-both");
+  mainContent.classList.remove("expand-left", "expand-right", "none-expand");
 
-  // Aplicamos clases según qué paneles están visibles
   if (!leftVisible && !rightVisible) {
-    mainContent.classList.add("expand-both");
+    mainContent.classList.add("none-expand");
   } else if (!leftVisible && rightVisible) {
-    mainContent.classList.add("expand-left");
+    mainContent.classList.add("expand-right");
   } else if (leftVisible && !rightVisible) {
+    mainContent.classList.add("expand-left");
+  } else if (leftVisible && rightVisible){
+    mainContent.classList.add("expand-left");
     mainContent.classList.add("expand-right");
   }
 }
@@ -115,6 +116,4 @@ friendsBtn.addEventListener("click", () => {
   updateMainLayout();
 });
 
-// Inicializamos el layout
 updateMainLayout();
-
