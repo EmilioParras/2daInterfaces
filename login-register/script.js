@@ -24,29 +24,6 @@ function togglePasswordVisibility(id) {
     passwordToggle.classList.add("fa-eye");
   }
 }
-function validateForm() {
-  const inputs = document.querySelectorAll('#registerForm input');
-  const button = document.getElementById("registerBtn");
-
-  let allFilled = true;
-
-  inputs.forEach(input => {
-    const placeholder = input.getAttribute('placeholder')?.toLowerCase();
-
-    // Si no es el campo opcional y está vacío → no está completo
-    if (placeholder !== 'nickname (optional)' && input.value.trim() === '') {
-      allFilled = false;
-    }
-  });
-
-  if (allFilled) {
-    button.classList.add('golden');
-    resetForms(); // limpia después de registrarse
-    setTimeout(() => button.classList.remove('golden'), 1500);
-  } else {
-    alert("Por favor, completá todos los campos (menos el nickname si no querés!!)");
-  }
-}
 function resetForms() {
   const inputs = document.querySelectorAll('input');
   inputs.forEach(input => input.value = '');
@@ -55,5 +32,3 @@ function resetForms() {
 function handleLogin() {
   resetForms(); // limpia los campos del login
 }
-
-

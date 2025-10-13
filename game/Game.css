@@ -138,6 +138,7 @@ main p {
 }
 
 .game-info a {
+  padding: 3px;
   font-weight: lighter;
   margin-right: 1%;
   background-color: #5B1176;
@@ -251,6 +252,9 @@ main p {
   color: #fff;
 }
 .reviews-section input{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
   background-color: #2C2A2C;
   width: 80%;
   color: #fff;
@@ -280,7 +284,6 @@ main p {
   transform: translateY(-2px);
 }
 
-
 .reviews-display{
   margin-top: 3%;
   margin-left: 2%;
@@ -290,22 +293,32 @@ main p {
 width: 70%;
 padding-right: 2%;
 }
+.top-reviews h3 {
+  color: #02c530;
+}
 .recent-reviews{
   width: 30%;
   padding-left: 2%;
-  border-left: solid #666 2px;
+  border-left: solid #000000 2px;
   margin-right: 2%;
 }
+.recent-reviews h3 {
+  color: #02c530;
+
+}
 .comment{
-  margin-left: 1%;
-  margin-top: 3%;
+  margin-top: 10px;
   position: relative;
   padding-bottom: 30px;
-  border-bottom: solid #666 2px;
 }
 .comment-head{
   display: flex;
   align-items: center;
+}
+.comment-head img {
+  height: 40px;
+  width: auto;
+  padding-right: 5px;
 }
 .comment-head span{
   margin-left: 10px;
