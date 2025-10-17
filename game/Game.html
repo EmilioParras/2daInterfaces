@@ -33,13 +33,13 @@
                 <div class="game">
 
                     <div class="media">
-                        <img src="Images/media.png" alt="Mostrando">
+                        <img id="mainImg" src="Images/media.png" alt="Mostrando">
                         <div class="media-list">
                             <img src="Images/media.png" alt="Imagen 1">
-                            <img src="Images/media.png" alt="Imagen 2">
-                            <img src="Images/media.png" alt="Imagen 3">
-                            <img src="Images/media.png" alt="Imagen 4">
-                            <img src="Images/media.png" alt="Imagen 5">
+                            <img src="Images/media2.png" alt="Imagen 2">
+                            <img src="Images/media3.png" alt="Imagen 3">
+                            <img src="Images/media4.png" alt="Imagen 4">
+                            <img src="Images/media5.png" alt="Imagen 5">
                             <img src="Images/media.png" alt="Imagen 6">
                             <img src="Images/media.png" alt="Imagen 7">
                             <img src="Images/media.png" alt="Imagen 8">
@@ -76,6 +76,8 @@
                             <button><img src="Images/Icons/expand.png" alt="Full-screen"></button>
                             <button><img src="Images/Icons/share.png" alt="Share"></button>
                         </div>
+                    </div>
+                </div>
             </section>
             <section class="reviews-section">
                 <h2>24 Reviews</h2>
@@ -85,8 +87,13 @@
                     <button id="comment">Comment</button>
                 </div>
                 <div class="reviews-display">
-                    <div class="top-reviews">
-                        <h3>Top comments</h2>
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="top">Top Comments</button>
+                        <button class="tab-btn" data-tab="recent">Recent Comments</button>
+                        <button class="tab-btn" data-tab="mine">My Comments</button>
+                    </div>
+                    <div class="tab-content active" id="top">
+                        <h3>Top comments</h3>
                             <div class="comment">
                                 <div class="comment-head">
                                     <img src="Images/Icons/profile-circle.png" alt="">
@@ -134,8 +141,8 @@
                                 </div>
                             </div>
                     </div>
-                    <div class="recent-reviews">
-                        <h3>Recent comments</h2>
+                    <div  class="tab-content" id="recent">
+                        <h3>Recent comments</h3>
                             <div class="comment">
                                 <div class="comment-head">
                                     <img src="Images/Icons/profile-circle.png" alt="">
@@ -160,6 +167,14 @@
                                 </div>
 
                             </div>
+                    </div>
+                    <div  class="tab-content" id="mine">
+                        <h3>My comments</h3>
+                        <div class="empty">
+                            <img src="Images/Icons/no-comment.png" alt="" width="100px">
+                        <p id="no-comment-found">No reviews yet</p>
+                    </div>
+                        
                     </div>
                 </div>
             </section>

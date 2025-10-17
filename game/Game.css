@@ -11,10 +11,14 @@ body {
   overflow-x: hidden;
   background-color: #2C2A2C;
 }
-html, body {
+
+html,
+body {
   max-width: 100%;
-  overflow-x: hidden; /* previene scroll horizontal */
+  overflow-x: hidden;
+  /* previene scroll horizontal */
 }
+
 /*----------Header Styles---------*/
 
 /*NavBar*/
@@ -83,7 +87,8 @@ main p {
 }
 
 .breadcrumb li+li:before {
-  content: "›";     /* Separador */
+  content: "›";
+  /* Separador */
   margin: 0 0.5rem;
   color: #666;
 }
@@ -119,6 +124,13 @@ main p {
 .media-list img {
   width: 100px;
   height: 5%;
+}
+
+.media-list img:hover,
+.media-list img.active {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 
@@ -168,7 +180,7 @@ main p {
 
 #play:hover {
   background-color: #2E003F;
-   transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .game-info button {
@@ -178,7 +190,7 @@ main p {
 }
 
 .game-info img:hover {
-  width: 60px;
+  width: 105%;
 }
 
 
@@ -205,7 +217,7 @@ main p {
   background: #222;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .game-execution {
@@ -242,162 +254,220 @@ main p {
 
 /*GameReviews*/
 
-.reviews-section{
+.reviews-section {
   margin-top: 3%;
-    margin-left: 1%;
+  margin-left: 1%;
 }
-.reviews-section h2{
+
+.reviews-section h2 {
   font-size: 30px;
   color: #fff;
 }
-.reviews-section input{
+
+.reviews-section input {
   background-color: #2C2A2C;
   width: 80%;
   color: #fff;
 }
-#comment{
+
+#comment {
   height: 40px;
   padding: 12px;
   border: none;
   border-radius: 20px;
   background: #5B1176;
   color: #fff;
-  font-size: 16px;  
+  font-size: 16px;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.reviews-section button{
- height: 40px;
+
+.reviews-section button {
   border: none;
   border-radius: 20px;
   background: #2C2A2C;
   color: #fff;
-  font-size: 16px;  
+  font-size: 16px;
   cursor: pointer;
 }
+
 #comment:hover {
   background: #2E003F;
   transform: translateY(-2px);
 }
 
 
-.reviews-display{
+.reviews-display {
   margin-top: 3%;
   margin-left: 2%;
+  display: block;
+}
+
+.tabs button {
+  padding: 1%;
+  margin: 5%;
+  border: solid black 2px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.tab-btn:hover {
+  background-color: #ccc;
+}
+
+.tab-btn.active {
+  background-color: #444;
+  color: #fff;
+  border-bottom: 0;
+}
+
+.tab-content {
+  display: none;
+  width: 70%;
+  padding-right: 2%;
+  margin-bottom: 5%;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tabs {
   display: flex;
 }
-.top-reviews{
-width: 70%;
-padding-right: 2%;
-}
-.recent-reviews{
-  width: 30%;
-  padding-left: 2%;
-  border-left: solid #666 2px;
-  margin-right: 2%;
-}
-.comment{
+
+.comment {
   margin-left: 1%;
   margin-top: 3%;
   position: relative;
   padding-bottom: 30px;
   border-bottom: solid #666 2px;
 }
-.comment-head{
+
+.comment-head {
   display: flex;
   align-items: center;
 }
-.comment-head span{
+
+.comment-head span {
   margin-left: 10px;
   color: #666;
 }
-.comment p{
+
+.comment p {
   color: #fff;
   margin-left: 1%;
   font-weight: 10;
 }
-.buttons{
+
+.buttons {
   display: flex;
   position: absolute;
   right: 10px;
 }
-.buttons button{
+
+.buttons button {
   height: 10px;
-  
+
   align-items: center;
 }
-.buttons img{
+
+.buttons img {
   max-width: 30px;
+}
+
+.empty {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 
 @media (max-width: 1000px) {
-.game{
-  display: block;
-}
-  .media{
-  width: 100%;
-}
-.game-info {
+  .game {
+    display: block;
+  }
+
+  .media {
     width: 100%;
-}
-.game-info p {
+  }
+
+  .game-info {
+    width: 100%;
+  }
+
+  .game-info p {
     margin-bottom: 0;
     font-size: 18px;
-}
-.game-info p{
-  font-size: smaller;
-}
-#play{
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.reviews-display{
-  display: block;
-}
-.top-reviews{
-  width: 100%;
-}
-.recent-reviews{
-  width: 100%;
-  margin-top: 4%;
-  border-top: solid #666 2px;
-  padding-top: 2%;
-  border-left: none;
-}
+  }
+
+  .game-info p {
+    font-size: smaller;
+  }
+
+  #play {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .reviews-display {
+    display: block;
+  }
+
+  .top-reviews {
+    width: 100%;
+  }
+
+  .recent-reviews {
+    width: 100%;
+    margin-top: 4%;
+    border-top: solid #666 2px;
+    padding-top: 2%;
+    border-left: none;
+  }
 }
 
 @media (max-width: 480px) {
-body {
-  padding: 10px;
-}
+  body {
+    padding: 10px;
+  }
 
-.container {
-  width: 100%;
-  max-width: 100%;
-  padding: 15px;
-  border-radius: 12px;
-}
-h1 {
-  font-size: 18px;
-}
-input,button {
-  font-size: 14px;
- 
-}
-.game{
-  display: block;
-}
-.media{
-  width: 100%;
-}
-.game-info {
+  .container {
     width: 100%;
-}
-.top-reviews{
-  width: 100%;
-}
-.recent-reviews{
-  display: none;
-}
+    max-width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  input,
+  button {
+    font-size: 14px;
+
+  }
+
+  .game {
+    display: block;
+  }
+
+  .media {
+    width: 100%;
+  }
+
+  .game-info {
+    width: 100%;
+  }
+
+  .top-reviews {
+    width: 100%;
+  }
+
+  .recent-reviews {
+    display: none;
+  }
 }
